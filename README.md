@@ -1,6 +1,5 @@
-phpctags
-========
-Master  [![Build Status](https://travis-ci.org/vim-php/phpctags.svg)](https://travis-ci.org/vim-php/phpctags?branch=master)  
+# phpctags
+Master  [![Build Status](https://travis-ci.org/vim-php/phpctags.svg)](https://travis-ci.org/vim-php/phpctags?branch=master)
 
 An enhanced php [ctags](http://ctags.sourceforge.net/) index file generator
 compatible with http://ctags.sourceforge.net/FORMAT.
@@ -16,8 +15,41 @@ functionality has been included into an addon plugin for tagbar as
 
 Enjoy!
 
-Installation
-------------
+## Vim
+```
+let g:tagbar_type_php = {
+	\ 'ctagsbin'  : 'phpctags',
+	\ 'ctagsargs' : '-f -',
+	\ 'kinds'     : [
+		\ 'd:Constants:0:0',
+		\ 'v:Variables:0:0',
+		\ 'f:Functions:1',
+		\ 'i:Interfaces:0',
+		\ 'c:Classes:0',
+		\ 'p:Properties:0:0',
+		\ 'm:Methods:1',
+		\ 'n:Namespaces:0',
+		\ 't:Traits:0',
+	\ ],
+	\ 'sro'        : '::',
+	\ 'kind2scope' : {
+		\ 'c' : 'class',
+		\ 'm' : 'method',
+		\ 'f' : 'function',
+		\ 'i' : 'interface',
+		\ 'n' : 'namespace',
+		\ 't' : 'trait',
+	\ },
+	\ 'scope2kind' : {
+		\ 'class'     : 'c',
+		\ 'method'    : 'm',
+		\ 'function'  : 'f',
+		\ 'interface' : 'i',
+		\ 'namespace' : 'n',
+		\ 'trait'     : 't',
+	\ }
+\ }
+```
 
 ## Download
 
@@ -42,14 +74,12 @@ directly from anywhere.
 See [phpctags on packagist](http://packagist.org/packages/techlivezheng/phpctags)
 for more details.
 
-Requirements
-------------
+## Requirements
 
 * PHP CLI 5.3+
 * [PHP-Parser](https://github.com/nikic/PHP-Parser)
 
-Acknowledgements
-----------------
+## Acknowledgements
 
 * [Snapi](https://github.com/sanpii) for composer support.
 * [DeMarko](https://github.com/DeMarko) for memory limit support.
